@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
 :root {
   --foreground-rgb: 0, 0, 0;

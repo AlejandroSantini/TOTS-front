@@ -1,11 +1,12 @@
-export default function Home() {
+import type { Metadata } from 'next'
+import Home from '../src/modules/Home'
+ 
+export const metadata: Metadata = {
+  title: 'TOTS Map',
+}
+ 
+export default function Main() {
   return (
-    <div className="container flex items-center p-4 mx-auto min-h-screen justify-center">
-      <main>
-        <h1 className="font-mono text-xl code">
-          Welcome <span className="text-blue-500">TOTS</span>
-        </h1>
-      </main>
-    </div>
-  );
+    <Home />
+  )
 }

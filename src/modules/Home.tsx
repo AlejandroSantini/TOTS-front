@@ -34,8 +34,10 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-4">
-        <h1 className="font-mono text-2xl font-bold text-center">TOTS Map</h1>
-      <SearchBar onSearch={handleSearch} />
+      <div className="mb-4">
+        <h1 className="font-mono text-2xl font-bold text-center">TOTS <span className=''>Map</span></h1>
+        <SearchBar onSearch={handleSearch} />
+      </div>
       <Map
         countries={filteredCountries.map((country) => ({
           name: country.Country,

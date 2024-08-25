@@ -1,29 +1,24 @@
-"use client";
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
-const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
-const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
-const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
-
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { LatLngExpression } from 'leaflet';
+import { LatLngTuple } from 'leaflet';
 
-const Map: React.FC = () => {
-  const position: LatLngExpression = [51.505, -0.09];
+interface MapProps {
+  countries: { name: string; latlng: LatLngTuple }[];
+}
 
+const Map: React.FC<MapProps> = ({ countries }) => {
   return (
-    <MapContainer center={position} zoom={13} style={{ height: '500px', width: '100%' }}>
+    <MapContainer center={[20, 0]} zoom={2} className="h-screen w-full rounded-lg mt-4">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <Marker position={position}>
-        <Popup>
-          A pretty CSS3 popup.<br />Easily customizable.
-        </Popup>
-      </Marker>
+      {countries.map((country, index) => (
+        <Marker key={index} position={country.latlng}>
+          <Popup>{country.name}</Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 };

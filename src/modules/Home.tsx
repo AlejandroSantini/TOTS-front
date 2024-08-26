@@ -51,6 +51,7 @@ const Home = () => {
       <Map
         countries={filteredCountries.map((country) => ({
           name: country.Country,
+          code: country.ISOCode,
           latlng: [country.Latitude, country.Longitude] as [number, number],
         }))}
       />

@@ -26,7 +26,7 @@ const COUNTRY_QUERY = gql`
 
 export const fetchCountry = async (code: string) => {
   try {
-    const data = await client.request(COUNTRY_QUERY, { code });
+    const data: any = await client.request(COUNTRY_QUERY, { code });
     return data.country;
   } catch (error) {
     console.error('Error fetching country details:', error);

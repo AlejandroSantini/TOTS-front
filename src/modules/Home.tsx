@@ -1,9 +1,12 @@
 "use client";
-
 import { useState, useEffect } from 'react';
-import { fetchCountries, Country } from '../services/countryService';
-import Map from '../components/Map';
-import SearchBar from '../components/SearchBar';
+import { fetchCountries, Country } from '../services/countryService.tsx';
+import dynamic from 'next/dynamic';
+import SearchBar from '../components/SearchBar.tsx';
+
+const Map = dynamic(() => import('../components/Map'), {
+    ssr: false 
+  });
 
 const Home = () => {
   const [query, setQuery] = useState('');

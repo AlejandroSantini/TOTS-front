@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LatLngTuple } from 'leaflet';
-import { fetchCountryDetails } from '../services/countryService'; 
+import { fetchCountryDetails } from '../services/countryService.tsx'; 
 
 interface MapProps {
   countries: { name: string; code: string; latlng: LatLngTuple }[];

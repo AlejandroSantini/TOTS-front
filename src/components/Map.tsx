@@ -20,7 +20,7 @@ const Map: React.FC<MapProps> = ({ countries }) => {
     <MapContainer center={[20, 0]} zoom={2} className="h-[80vh] w-full rounded-lg mt-4">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&copy;'
       />
       {countries.map((country, index) => (
         <Marker key={index} position={country.latlng} icon={customIcon}>

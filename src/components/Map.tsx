@@ -47,12 +47,11 @@ const Map: React.FC<MapProps> = ({ countries }) => {
               <div className="text-start">
                 <h2 className="text-lg font-bold">{country.name}</h2>
                 {selectedCountry && (
-
                   <div className="mt-2 text-sm">
                     <p>Continent: {selectedCountry.continent.name}</p>
                     <p>Currency: {selectedCountry.currency}</p>
                     <p>Languages: {selectedCountry.languages.map((lang: any) => lang.name).join(', ')}</p>
-                    <p>hola</p>
+                    <p>test numero 2</p>
                   </div>
                 )}
               </div>
